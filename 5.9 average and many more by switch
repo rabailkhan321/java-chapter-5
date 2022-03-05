@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Welcome
+{
+	public static void main(String[] args)
+	{
+		 
+		Scanner input=new Scanner(System.in);
+		int grade;
+		int gradecount=0;
+		int sum=0;
+		int Acount=0;
+		int Bcount=0;
+		int Ccount=0;
+		int Dcount=0;
+		int Fcount=0;
+		System.out.println("enter your grade number(0-100)");
+		System.out.println("type the eof indicator to terminate input: ");
+		while(input.hasNext())
+		{
+			grade= input.nextInt();
+			sum=sum+grade;
+			gradecount++;
+			switch(grade/10)
+			{
+				case 9:
+				case 10:
+				++Acount;
+				break;
+				
+				case 8:
+				++Bcount;
+				break;
+				
+				case 7:
+				++Ccount;
+				break;
+				
+				case 6:
+				++Dcount;
+				break;
+				
+				
+				default:
+				++Fcount;
+				break;
+			
+			
+			}
+		}
+		System.out.printf("GRADE REPORT:%n");
+		if (gradecount!=0)
+		{
+			double average = (double)sum/gradecount;
+			System.out.printf("total of the %d grade entred is %d5n", gradecount, sum);
+			System.out.printf("class average is %.2f%n", average);
+			System.out.printf("number of students who received each grade :%n");
+			System.out.printf("A: %d%n", Acount);
+			System.out.printf("B: %d%n", Bcount);
+			System.out.printf("C: %d%n", Ccount);
+			System.out.printf("D: %d%n", Dcount);
+			System.out.printf("F: %d%n", Fcount);
+			
+			
+			
+		}
+		else
+			System.out.printf("no grade entered%n");
+		
+		
+	}
+}
